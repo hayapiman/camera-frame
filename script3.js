@@ -5,7 +5,7 @@ const frameImg = document.getElementById('frame');
 const resultDiv = document.getElementById('result');
 
 // 1. カメラの起動
-navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false })
+navigator.mediaDevices.getUserMedia({ video: { exact: "environment" }, audio: false })
     .then(stream => {
         video.srcObject = stream;
     })
@@ -37,3 +37,4 @@ shutter.addEventListener('click', () => {
     resultDiv.appendChild(newImg);
 
 });
+
