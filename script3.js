@@ -35,6 +35,4 @@ shutter.addEventListener('click', () => {
     
     resultDiv.innerHTML = "<h3>撮影結果:</h3>";
     resultDiv.appendChild(newImg);
-
 });
-
