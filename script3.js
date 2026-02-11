@@ -33,13 +33,13 @@ async function startCamera(facingMode) {
 // 最初にページを開いたときに実行する（初期値は外カメラ）
 startCamera(currentFacingMode);
 
-switchBtn.addEventListener('click', () => {
+    switchBtn.addEventListener('click', () => {
     currentFacingMode = (currentFacingMode === "user") ? "environment" : "user";
     startCamera(currentFacingMode);
 });
 
 // 2. 撮影処理
-shutter.addEventListener('click', () => {
+    shutter.addEventListener('click', () => {
     const context = canvas.getContext('2d');
 　　canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
@@ -63,10 +63,11 @@ shutter.addEventListener('click', () => {
     // 保存ボタンの設定
     downloadLink.href = dataUrl;
     downloadLink.download = 'my-photo.png'; // 保存されるファイル名
-    downloadBtn.setAttribute('style', 'visibility: visible !important; display: flex !important;');    // 保存ボタンを表示する
+    downloadBtn.style.opacity = '1';
+    downloadBtn.style.pointerEvents = 'auto';
 });
 // 保存ボタンを押した時の動き
-downloadBtn.addEventListener('click', () => {
+    downloadBtn.addEventListener('click', () => {
     downloadLink.click(); // 隠しリンクをプログラムでクリックして保存を実行
     
     // キャンバスのサイズをビデオに合わせる
