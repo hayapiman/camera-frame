@@ -1,14 +1,23 @@
+body {
+    background-color: #000; /* 背景を黒にしてカメラっぽく */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
 #camera-container {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+position: relative;
+    width: 100vw;
+    height: 80vh; /* 画面の8割をカメラに */
+    overflow: hidden;
+    background: #222;
 }
 
 #video {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover;
 }
 
 #frame {
@@ -17,12 +26,42 @@
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* フレームがクリックの邪魔をしないように */
+    pointer-events: none;
+    z-index: 10;
+}
+
+#controls {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 20;
 }
 
 #shutter {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 18px;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#shutter:active {
+    background-color: #ccc;
+    transform: scale(0.95);
+}
+
+.sub-btn {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
