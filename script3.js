@@ -59,7 +59,7 @@ shutter.addEventListener('click', () => {
     // 保存ボタンの設定
     downloadLink.href = dataUrl;
     downloadLink.download = 'my-photo.png'; // 保存されるファイル名
-    downloadBtn.style.display = 'flex';    // 保存ボタンを表示する
+    downloadBtn.style.display = 'visible';    // 保存ボタンを表示する
 });
 
 // 保存ボタンを押した時の動き
