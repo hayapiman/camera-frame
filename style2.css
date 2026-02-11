@@ -5,11 +5,12 @@ body {
     flex-direction: column;
     align-items: center;
     color: white;
+    min-height: 100vh;
 }
 #camera-container {
 position: relative;
     width: 100vw;
-    height: 80vh; /* 画面の8割をカメラに */
+    height: 75vh; /* 画面の8割をカメラに */
     overflow: hidden;
     background: #222;
 }
@@ -32,11 +33,12 @@ position: relative;
 
 #controls {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 40px;
     z-index: 20;
 }
 
@@ -48,6 +50,7 @@ position: relative;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    flex-shrink: 0;
 }
 
 #shutter:active {
@@ -64,4 +67,25 @@ position: relative;
     color: white;
     font-size: 20px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#download-btn {
+    display: none; 
+}
+
+#result {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#result img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
 }
