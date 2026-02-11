@@ -74,7 +74,13 @@ position: relative;
 }
 
 #download-btn {
-    visibility: hidden;
+background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.5; 
+    pointer-events: none; 
 }
 
 #result {

@@ -43,11 +43,14 @@ shutter.addEventListener('click', () => {
     const context = canvas.getContext('2d');
 　　canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
-
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     context.drawImage(frameImg, 0, 0, canvas.width, canvas.height);
-
     const dataUrl = canvas.toDataURL('image/png');
+    downloadLink.href = dataUrl;
+    downloadLink.download = 'my-photo.png';
+    downloadBtn.style.opacity = '1';
+    downloadBtn.style.pointerEvents = 'auto';
+});  
     
     // 撮影結果の表示
     resultDiv.innerHTML = "<h3>撮影完了！</h3>";
@@ -59,8 +62,7 @@ shutter.addEventListener('click', () => {
     // 保存ボタンの設定
     downloadLink.href = dataUrl;
     downloadLink.download = 'my-photo.png'; // 保存されるファイル名
-    downloadBtn.style.visibility = 'visible';    // 保存ボタンを表示する
-});
+    downloadBtn.setAttribute('style', 'visibility: visible !important; display: flex !important;');    // 保存ボタンを表示する
 
 // 保存ボタンを押した時の動き
 downloadBtn.addEventListener('click', () => {
