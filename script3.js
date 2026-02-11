@@ -46,10 +46,6 @@ shutter.addEventListener('click', () => {
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     context.drawImage(frameImg, 0, 0, canvas.width, canvas.height);
     const dataUrl = canvas.toDataURL('image/png');
-    downloadLink.href = dataUrl;
-    downloadLink.download = 'my-photo.png';
-    downloadBtn.style.opacity = '1';
-    downloadBtn.style.pointerEvents = 'auto';
 });  
     
     // 撮影結果の表示
@@ -58,6 +54,11 @@ shutter.addEventListener('click', () => {
     newImg.src = dataUrl;
     newImg.style.width = "100%";
     resultDiv.appendChild(newImg);
+
+    downloadLink.href = dataUrl;
+    downloadLink.download = 'my-photo.png';
+    downloadBtn.style.opacity = '1';
+    downloadBtn.style.pointerEvents = 'auto';
 
     // 保存ボタンの設定
     downloadLink.href = dataUrl;
